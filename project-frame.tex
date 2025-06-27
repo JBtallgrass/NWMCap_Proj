@@ -1,0 +1,137 @@
+CRISP-DM Project Structure  
+Workforce Readiness in Rural North Central Arkansas
+
+This document provides a detailed breakdown of how the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology is applied to this project, which explores the alignment between educational outcomes and labor market demands in rural North Central Arkansas.
+
+1. Business Understanding
+
+Objective
+To investigate whether current educational outcomes—such as certifications and associate degrees—are aligned with labor market needs in rural counties of North Central Arkansas.
+
+Key Problem
+Rural counties often experience low educational attainment, limited broadband access, and a mismatch between training programs and available jobs. This project aims to identify patterns in workforce readiness and provide actionable insights for regional planning and educational strategy.
+
+Target Region
+Counties include (but are not limited to):
+- Baxter  
+- Fulton  
+- Marion  
+- Izard  
+- Sharp  
+- Stone  
+
+Stakeholders
+- Arkansas State University–Mountain Home (ASUMH)
+- Local workforce boards
+- State education policymakers
+- Rural economic development partners
+
+2. Data Understanding
+
+Primary Data Sources
+| Source | Description |
+|--------|-------------|
+| ACS (Census) | Demographics, education, broadband, poverty |
+| BLS | Employment stats, job openings, wages |
+| USDA ERS | Rural typologies, persistent poverty indicators |
+| IPEDS | Postsecondary completions, enrollment |
+| Arkansas Open Data Portal | Local training data, economic indicators |
+
+Exploratory Steps
+- Reviewed variable distributions across counties
+- Identified missing values, scaling issues, and categorical encodings
+- Cross-referenced multiple sources to validate educational and job data
+
+3. Data Preparation
+
+Processing
+- Cleaned raw datasets for consistency (e.g., column names, null handling)
+- Merged datasets using county-level FIPS codes
+- Filtered data to only include relevant counties and years
+- Removed or imputed missing values where needed
+
+Feature Engineering
+- `% adults with associate degrees or higher`
+- `Job postings per capita in high-demand fields`
+- `Broadband subscription %`
+- `Unemployment rate`
+- `IPEDS completions in technical or healthcare programs`
+
+Output
+Final structured dataset:  
+`data/final/nca_workforce_ready.csv`
+
+Modeling
+
+Unsupervised Learning – Clustering
+Goal: Segment counties into clusters based on shared characteristics
+
+Techniques Used:
+- K-Means Clustering
+- Hierarchical Agglomerative Clustering
+- DBSCAN (exploratory)
+
+Features Used for Clustering:
+- Educational attainment
+- Broadband access
+- Job demand in middle-skill sectors
+- Postsecondary completions
+
+Evaluation Metrics:
+- Silhouette Score
+- Davies-Bouldin Index
+- Dendrogram interpretation
+
+Supervised Learning (Optional)
+Goal: Predict counties most at risk of workforce development gaps
+
+Techniques Considered:
+- Logistic Regression
+- Random Forest Classifier
+- Ridge Regression (if modeling numeric risk scores)
+
+Target Variable (if modeled):
+- Binary or categorical risk tier based on education-to-employment misalignment
+
+5. Evaluation
+
+Clustering Review
+- Visualized clusters with PCA, scatter plots, and county-level maps
+- Compared internal validation scores (silhouette, inertia)
+- Interpreted cluster profiles to determine real-world meaning:
+  - Cluster A: High broadband, low completions  
+  - Cluster B: Low education, high poverty  
+  - Cluster C: Workforce aligned
+
+Supervised Model (if used)
+- Analyzed feature importance and confusion matrix
+- Assessed risk prediction validity using cross-validation
+- Discussed ethical limitations in labeling "at-risk" counties
+
+6. Deployment & Reporting
+
+Visual Deliverables
+- County Cluster Map (choropleth or bubble map)
+- Cluster Comparison Charts (bar, slope, dot)
+- Feature Relationships (scatterplots, regression line comparisons)
+- (Optional) Tableau dashboard for exploration
+
+Final Report Includes:
+- Executive summary for stakeholders
+- Description of method and findings
+- Visuals and interpretations
+- Policy or curriculum recommendations
+
+Deliverables
+- `/report/Executive_Summary.pdf`
+- `/visuals/cluster_map.png`
+- `/notebooks/final_model_analysis.ipynb`
+
+Final Notes
+
+This CRISP-DM structure enabled a methodical and adaptable approach to addressing a real-world workforce question in a rural context. While model performance and data availability are constraints, this framework facilitated exploration, insight generation, and evidence-based recommendations that can support rural resilience through education.
+
+
+Prepared by Jason  
+Data Scientist and Rural Advocate  
+June 2025
