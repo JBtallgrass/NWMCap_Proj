@@ -12,11 +12,11 @@ Explore my GitHub repository, [jbtallgrass](https://github.com/JBtallgrass?tab=r
 
 ## ⚡ TL;DR
 
-- Goal: Predict medical charges based on personal and lifestyle factors.
-- Tools: Python, Pandas, Scikit-Learn, Plotly, GitHub Pages.
-- Process: Data cleaning, feature engineering, multiple regression models.
-- Best Model: Polynomial Regression (Pipeline 2) performed best overall.
-- Bonus: Interactive Plotly chart hosted with GitHub Pages.
+- Goal: 
+- Tools:
+- Process: 
+- Best Model: 
+- Bonus:
 
 ---
 
